@@ -16,8 +16,10 @@ jobs:
           cache-dependency-path: 'backend/pom.xml' # optional
 
       - name: compile 
-        run: java -version
+        working-directory: backend
+        run: mvn -B package
+
       - name: List files in the repository
         run: |
-          ls ${{ github.workspace }}/backend
+          ls ${{ github.workspace }}/backend/target
       - run: echo "🍏 This job's status is ${{ job.status }}."
