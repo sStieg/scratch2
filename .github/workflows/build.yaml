@@ -3,7 +3,8 @@ on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    permissions: write-all
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
